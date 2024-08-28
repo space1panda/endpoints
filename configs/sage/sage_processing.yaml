@@ -1,0 +1,4 @@
+main:
+  job_name: 'TestProcessingJob'
+  run_setup: False
+  setup_path: configs/sage/sage_setup.yaml

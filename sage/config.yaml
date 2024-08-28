@@ -1,0 +1,6 @@
+aws:
+  account_id: '682033470945'
+  region: us-east-1
+  sagemaker:
+    iam_role_name: TestSageRole
+    damin_name: TestSageDomain

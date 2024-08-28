@@ -1,0 +1,26 @@
+main:
+  region: 'us-east-1'
+  account_number: 
+  vpcid: 'vpc-08978daa2747373ec'
+  subnets:
+    - 'subnet-094cd7ca8e38dbe03'
+  filter_responses:
+    - 'CreateDate'
+    - 'CreationTime'
+    - 'LastModifiedTime'
+  out_settings_path: 'configs/sage/sage_settings.yaml'
+  need_domain: False
+
+iam:
+  role_name: SageExec
+  region: ${main.region}
+  trust_policy_path: 'configs/sage/sage_trust_policy.json'
+  role_policies:
+    - 'arn:aws:iam::aws:policy/AmazonSageMakerFullAccess'
+    - 'arn:aws:iam::aws:policy/AmazonS3FullAccess'
+
+domain:
+  domain_name: 'TestSageDomain2'
+  region: ${main.region}
+  vpcid: ${main.vpcid}
+  subnets: ${main.subnets}
